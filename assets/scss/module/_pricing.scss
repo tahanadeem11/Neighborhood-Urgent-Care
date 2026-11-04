@@ -1,0 +1,176 @@
+/*--------------------------------
+    #Pricing
+---------------------------------*/
+.pricing {
+    padding-top   : 0;
+    padding-bottom: 50px;
+    overflow      : visible;
+    z-index       : 2;
+    position      : relative;
+
+    @media #{$maxTablet} {
+        padding-bottom: 30px;
+    }
+
+    .sidebar-pricing {
+        @media #{$minLarge} {
+            margin-top  : 8px;
+            margin-left : 0;
+            margin-right: auto;
+        }
+    }
+
+    .services-heading {
+        font-family  : var(--global--font-body);
+        font-weight  : 700;
+        font-size    : 16px;
+        line-height  : 27px;
+        color        : var(--global--color-secondary-darken-alt);
+        margin-bottom: 42px;
+    }
+
+    &.pricing-1 {
+        @media #{$minLarge} {
+            transform    : translateY(-6px);
+            margin-bottom: -6px;
+        }
+
+        .pricing-panel {
+            margin-bottom: 90px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @media #{$maxTablet} {
+                margin-bottom: 40px;
+
+                &:last-child {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+
+        .divider {
+            position: absolute;
+            top     : 100%;
+            left    : 0;
+            width   : 100%;
+            z-index : 4;
+
+            &::before {
+                content         : '';
+                position        : absolute;
+                top             : 0px;
+                left            : 0;
+                width           : 50%;
+                height          : 100%;
+                background-color: var(--global--color-white);
+            }
+
+            .bg {
+                background-color: var(--global--color-white);
+                height          : 80px;
+            }
+        }
+    }
+}
+
+.pricing-panel {
+    @media #{$maxTablet} {
+        max-width: 330px;
+        margin   : 0 auto;
+    }
+
+    .pricing-head {
+        display         : flex;
+        align-items     : center;
+        background-color: #2C1244;
+        height          : 84px;
+        padding-left    : 11px;
+        position        : relative;
+
+        .pricing-icon {
+            display     : flex;
+            align-items : flex-end;
+            height      : 100%;
+            margin-right: 11px;
+
+            i {
+                display  : flex;
+                font-size: 60px;
+                color    : var(--global--color-white);
+            }
+        }
+
+        .pricing-title {
+            h3 {
+                font-family   : var(--global--font-heading);
+                font-weight   : 500;
+                font-size     : 18px;
+                line-height   : 1;
+                color         : var(--global--color-white);
+                margin-bottom : 0;
+                text-transform: capitalize;
+            }
+        }
+
+        .icon-bg {
+            position : absolute;
+            top      : 50%;
+            right    : 15px;
+            transform: translateY(-50%);
+
+            @media #{$maxTablet} {
+                right: 0;
+            }
+
+            i {
+                display  : inline-flex;
+                font-size: 160px;
+                color    : var(--global--color-white);
+                opacity  : 0.1;
+
+                @media #{$maxTablet} {
+                    font-size: 130px;
+                }
+            }
+        }
+    }
+
+    .pricing-body {
+        .pricing-list {
+            margin-bottom: 0;
+
+            li {
+                font-family     : var(--global--font-body);
+                font-size       : 16px;
+                font-weight     : 400;
+                color           : #4F4B63;
+                display         : flex;
+                align-items     : center;
+                justify-content : space-between;
+                height          : 70px;
+                padding         : 0 40px;
+                background-color: #F3EEF9;
+
+                @media #{$maxLarge} {
+                    padding: 0 20px;
+                }
+
+                &:nth-child(odd) {
+                    background-color: var(--global--color-white);
+                }
+
+                span {
+                    margin-left: 5px;
+
+                    &.price {
+                        font-weight: 700;
+                        color      : var(--global--color-primary);
+                    }
+                }
+            }
+        }
+    }
+}

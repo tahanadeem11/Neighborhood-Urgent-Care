@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    #PAGINATION
+\*------------------------------------*/
+.pagination {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    margin         : 0;
+    border-radius  : 0;
+
+    li {
+        margin-left: 10px;
+        display     : inline-block;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-left: 20px;
+        }
+        a,
+        span {
+            display         : inline-flex;
+            justify-content : center;
+            align-items     : center;
+            background-color: var(--global--color-white);
+            color           : var(--global--color-secondary-darken);
+            font-family     : var(--global--font-body);
+            font-size       : 20px;
+            font-weight     : 700;
+            text-transform  : uppercase;
+            padding         : 0;
+            width           : 54px;
+            height          : 54px;
+            border          : 2px solid #e6e8eb;
+            transition      : 300ms ease-in-out;
+            
+            &:hover {
+                background-color: var(--global--color-secondary);
+                color           : var(--global--color-white);
+                border-color    : var(--global--color-secondary);
+            }
+
+            i {
+                font-size: 11px;
+            }
+
+            &.current {
+                background-color: var(--global--color-secondary);
+                color           : var(--global--color-white);
+                border-color    : var(--global--color-secondary);
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    #BACK TO TOP
+\*------------------------------------*/
+
+#back-to-top {
+    z-index         : 999;
+    position        : fixed;
+    right           : 0px;
+    bottom          : 0px;
+    opacity         : 0;
+    width           : 80px;
+    height          : 110px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction : column;
+    text-align : center;
+    cursor          : pointer;
+    transition      : 300ms ease-in-out;
+    background-color: var(--global--color-secondary);
+
+    &:hover {
+        background-color: var(--global--color-heading);
+    }
+
+    &.show {
+        opacity: 1;
+    }
+
+    svg {
+        color: var(--global--color-white);
+        margin-bottom: 6px;
+    }
+    span {
+        font-family: var(--global--font-body);
+        font-weight: 700;
+        font-size: 14px;
+        line-height:19px;
+        color: var(--global--color-white);
+        text-transform: uppercase;
+    }
+    @media #{$maxTablet} {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        right: 20px;
+        bottom: 20px;
+        svg {
+            margin-bottom: 0;
+        }
+        span {
+            display: none;
+        }
+    }
+}

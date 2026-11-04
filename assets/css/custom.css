@@ -1,0 +1,150 @@
+/* Neighborhood Urgent Care - brand layer (loaded after style.css) */
+:root {
+  --nuc-blue: #2d9cf0;
+  --nuc-teal: #1fa9d6;
+  --nuc-purple: #6a2c91;
+  --nuc-purple-dark: #3b1a5a;
+  --nuc-orange: #f7941d;
+  --nuc-green: #3dae2b;
+  --nuc-ink: #2e1a47;
+  --nuc-soft: #f3eef9;
+  --nuc-grad: linear-gradient(120deg, #3b1a5a 0%, #6a2c91 55%, #2d9cf0 120%);
+  --nuc-rainbow: linear-gradient(90deg, #2d9cf0, #6a2c91, #f7941d, #3dae2b);
+}
+
+body { color: #4f4b63; }
+
+/* ---------- Brand lockup ---------- */
+.header .navbar-brand.brand-lockup { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-lockup .brand-icon { width: 62px; height: 62px; object-fit: contain; }
+.brand-lockup .brand-text { display: flex; flex-direction: column; line-height: 1.05; font-family: var(--global--font-heading); }
+.brand-lockup .brand-text b { font-size: 21px; font-weight: 800; color: var(--nuc-purple); letter-spacing: -.2px; }
+.brand-lockup .brand-text span { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--nuc-blue); }
+.footer .brand-lockup .brand-text b { color: #fff; }
+.footer .brand-lockup .brand-text span { color: #8fd0ff; }
+@media (max-width: 575.98px) {
+  .brand-lockup .brand-icon { width: 46px; height: 46px; }
+  .brand-lockup .brand-text b { font-size: 16px; }
+  .brand-lockup .brand-text span { font-size: 10px; letter-spacing: 2px; }
+}
+
+/* top bar + rainbow accent */
+.header .top-bar { background: var(--nuc-grad); }
+.header .top-bar, .header .top-bar a, .header .top-bar p { color: #fff; }
+.header .top-bar svg path { fill: #fff; }
+.header::after { content: ""; display: block; height: 4px; background: var(--nuc-rainbow); }
+.header .navbar .navbar-nav > li > a:hover,
+.header .navbar .navbar-nav > li.active > a { color: var(--nuc-blue); }
+
+/* ---------- Buttons ---------- */
+.btn--secondary, .btn--secondary-dark { background-color: var(--nuc-purple); border-color: var(--nuc-purple); }
+.btn--secondary:hover, .btn--secondary-dark:hover { background-color: var(--nuc-orange); border-color: var(--nuc-orange); color: #fff; }
+.btn-orange { background: var(--nuc-orange); border-color: var(--nuc-orange); color: #fff; }
+.btn-orange:hover { background: var(--nuc-purple); border-color: var(--nuc-purple); color: #fff; }
+
+/* ---------- Hero slides ---------- */
+.slider .slide .bg-section.nuc-grad { background: var(--nuc-grad); }
+.slider .slide .slide-title { text-shadow: 0 2px 14px rgba(0, 0, 0, .25); }
+.slide-photo { max-width: 460px; margin-left: auto; position: relative; }
+.slide-photo img { width: 100%; border-radius: 28px; border: 8px solid rgba(255, 255, 255, .92); box-shadow: 0 25px 60px rgba(0, 0, 0, .35); }
+.slide-photo::before { content: ""; position: absolute; inset: -18px 18px 18px -18px; border-radius: 32px; background: var(--nuc-orange); opacity: .85; z-index: -1; }
+.slide-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.slide-badges span { background: rgba(255, 255, 255, .16); border: 1px solid rgba(255, 255, 255, .4); color: #fff; padding: 6px 14px; border-radius: 30px; font-size: 13px; font-weight: 600; }
+
+/* ---------- Section helpers ---------- */
+.nuc-section { padding: 90px 0; position: relative; }
+.nuc-section.soft { background: var(--nuc-soft); }
+.nuc-section .heading-title { color: var(--nuc-ink); }
+.nuc-eyebrow { display: inline-block; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; color: var(--nuc-orange); margin-bottom: 10px; }
+.nuc-lead { font-size: 17px; line-height: 1.8; }
+
+/* service cards */
+.nuc-card { background: #fff; border-radius: 18px; padding: 0 0 26px; height: 100%; box-shadow: 0 10px 35px rgba(59, 26, 90, .09); overflow: hidden; transition: transform .25s, box-shadow .25s; display: flex; flex-direction: column; border-top: 5px solid var(--accent, var(--nuc-blue)); }
+.nuc-card:hover { transform: translateY(-6px); box-shadow: 0 18px 45px rgba(59, 26, 90, .16); }
+.nuc-card .thumb { height: 190px; overflow: hidden; }
+.nuc-card .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.nuc-card:hover .thumb img { transform: scale(1.06); }
+.nuc-card .body { padding: 0 24px; flex: 1; display: flex; flex-direction: column; }
+.nuc-card .ico { width: 58px; height: 58px; border-radius: 16px; background: var(--accent, var(--nuc-blue)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; margin: -29px 0 14px; box-shadow: 0 8px 18px rgba(0, 0, 0, .18); position: relative; }
+.nuc-card h3 { font-size: 19px; margin-bottom: 10px; color: var(--nuc-ink); }
+.nuc-card h3 a { color: inherit; }
+.nuc-card p { font-size: 15px; flex: 1; }
+.nuc-card .more { font-weight: 700; color: var(--accent, var(--nuc-blue)); text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+.nuc-card .more i { margin-left: 6px; transition: margin .2s; }
+.nuc-card:hover .more i { margin-left: 12px; }
+.acc-blue { --accent: var(--nuc-blue); } .acc-purple { --accent: var(--nuc-purple); }
+.acc-orange { --accent: var(--nuc-orange); } .acc-green { --accent: var(--nuc-green); } .acc-teal { --accent: var(--nuc-teal); }
+
+/* why us */
+.nuc-why { background: var(--nuc-grad); color: #fff; }
+.nuc-why .heading-title, .nuc-why h4, .nuc-why p { color: #fff; }
+.nuc-why .nuc-eyebrow { color: #ffc46b; }
+.why-item { display: flex; gap: 18px; margin-bottom: 30px; }
+.why-item .ico { flex: 0 0 56px; height: 56px; border-radius: 50%; background: rgba(255, 255, 255, .15); border: 2px solid rgba(255, 255, 255, .5); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.why-item h4 { font-size: 18px; margin-bottom: 6px; }
+.why-item p { margin: 0; opacity: .92; font-size: 15px; }
+.why-photo img { border-radius: 24px; box-shadow: 0 25px 60px rgba(0, 0, 0, .35); width: 100%; }
+
+/* steps */
+.nuc-step { text-align: center; padding: 10px 20px; }
+.nuc-step .num { width: 74px; height: 74px; line-height: 74px; border-radius: 50%; margin: 0 auto 18px; font-size: 28px; font-weight: 800; color: #fff; background: var(--accent); box-shadow: 0 10px 25px rgba(0, 0, 0, .15); }
+.nuc-step h4 { color: var(--nuc-ink); font-size: 19px; }
+
+/* area chips */
+.area-chip { display: flex; align-items: center; gap: 14px; background: #fff; border-radius: 16px; padding: 18px 20px; box-shadow: 0 8px 25px rgba(59, 26, 90, .08); color: var(--nuc-ink); font-weight: 700; height: 100%; border-left: 5px solid var(--accent); transition: transform .2s; }
+.area-chip:hover { transform: translateY(-4px); color: var(--nuc-purple); }
+.area-chip i { color: var(--accent); font-size: 22px; }
+.area-chip small { display: block; font-weight: 500; color: #6d6883; }
+
+/* CTA band */
+.nuc-cta { background: var(--nuc-grad); color: #fff; padding: 60px 0; position: relative; overflow: hidden; }
+.nuc-cta::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--nuc-rainbow); }
+.nuc-cta h2 { color: #fff; margin-bottom: 8px; font-size: 32px; }
+.nuc-cta p { color: #efe6f7; margin: 0; }
+.nuc-cta .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+@media (max-width: 991.98px) { .nuc-cta .actions { justify-content: flex-start; margin-top: 20px; } }
+
+/* inner banner */
+.hero.hero-5 .hero-title { text-shadow: 0 2px 14px rgba(0, 0, 0, .3); }
+.hero.hero-5.bg-overlay-dark-hero::before { background: linear-gradient(120deg, rgba(59, 26, 90, .85), rgba(45, 156, 240, .55)); opacity: 1; }
+
+/* sidebar widgets */
+.widget-call { background: var(--nuc-grad); color: #fff; border-radius: 16px; padding: 30px 26px; margin-bottom: 30px; text-align: center; }
+.widget-call i { font-size: 38px; color: #ffc46b; margin-bottom: 10px; }
+.widget-call h5, .widget-call p, .widget-call a { color: #fff; }
+.widget-call .num { display: block; font-size: 26px; font-weight: 800; margin: 8px 0; }
+.widget-call .fax { display: block; font-size: 13px; opacity: .85; }
+
+/* service page content */
+.nuc-check { list-style: none; padding: 0; margin: 0 0 20px; columns: 2; column-gap: 30px; }
+@media (max-width: 767.98px) { .nuc-check { columns: 1; } }
+.nuc-check li { padding: 7px 0 7px 32px; position: relative; break-inside: avoid; }
+.nuc-check li::before { content: "\f00c"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 0; top: 7px; width: 22px; height: 22px; line-height: 22px; text-align: center; font-size: 11px; color: #fff; background: var(--nuc-green); border-radius: 50%; }
+.service-photo { border-radius: 20px; width: 100%; margin: 6px 0 24px; box-shadow: 0 14px 40px rgba(59, 26, 90, .15); }
+.nuc-note { background: var(--nuc-soft); border-left: 5px solid var(--nuc-orange); padding: 16px 20px; border-radius: 10px; font-size: 14.5px; margin: 20px 0; }
+
+/* contact cards */
+.contact-tile { background: #fff; border-radius: 16px; padding: 28px 22px; text-align: center; box-shadow: 0 10px 30px rgba(59, 26, 90, .09); height: 100%; border-bottom: 5px solid var(--accent); }
+.contact-tile i { font-size: 30px; color: var(--accent); margin-bottom: 12px; }
+.contact-tile h4 { color: var(--nuc-ink); font-size: 18px; }
+.contact-tile a { color: inherit; font-weight: 600; }
+.map-wrap iframe { width: 100%; height: 420px; border: 0; border-radius: 18px; box-shadow: 0 14px 40px rgba(59, 26, 90, .15); }
+
+/* footer */
+.footer .footer-top { background: #2c1244; }
+.footer .footer-widget-title h3 { color: #fff; }
+.footer .footer-widget p, .footer .footer-widget li, .footer .footer-widget a { color: #d9cbe8; }
+.footer .footer-widget a:hover { color: #ffc46b; }
+.footer .footer-bottom { background: #20093a; }
+.footer-hours li { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; }
+
+/* gradient hero slide: no grey wash */
+.slider .slide.nuc-slide-grad::before, .slider .slide.nuc-slide-grad::after { display: none !important; }
+.slider .slide .bg-section.nuc-grad { position: absolute; inset: 0; opacity: 1; }
+.slider .slide.nuc-slide-grad { background: var(--nuc-grad) !important; }
+.slider .slide.nuc-slide-grad { background: var(--nuc-grad) !important; }
+
+/* hero: brand-tinted overlay over photo backgrounds */
+.slider .slide.bg-overlay-dark-slider::before { background: linear-gradient(100deg, rgba(44, 18, 68, .88) 0%, rgba(59, 26, 90, .65) 50%, rgba(45, 156, 240, .25) 100%) !important; opacity: 1 !important; }
+.footer .footer-bottom .copyright a { color: #ffc46b; font-weight: 600; }
+.footer .footer-bottom .copyright a:hover { color: #fff; text-decoration: underline; }

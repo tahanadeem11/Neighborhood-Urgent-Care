@@ -1,0 +1,129 @@
+/*------------------------------------*\
+    #Carousel
+\*------------------------------------*/
+.owl-nav.disabled {
+    display: none;
+}
+
+.carousel-dots {
+    position: relative;
+
+    button.owl-dot,
+    button.owl-dot:focus {
+        padding         : 0;
+        background-color: transparent;
+        border          : none;
+        outline         : none;
+        box-shadow      : none;
+    }
+
+    .owl-dots {
+        display        : flex;
+        justify-content: center;
+        align-items    : flex-end;
+        z-index        : 5;
+
+        .owl-dot {
+            margin-right: 10px;
+            display     : inline-flex;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.active {
+                span {
+                    border-bottom: 4px solid var(--global--color-secondary);
+                    border-width : 6px;
+                }
+            }
+
+            span {
+                display      : inline-block;
+                width        : 24px;
+                height       : 6px;
+                border-bottom: 4px solid var(--global--color-secondary-darken);
+                transition   : 0.3s ease-in-out;
+                margin-right : 0;
+                position     : relative;
+            }
+        }
+    }
+
+    &.carousel-dots-white {
+        .owl-dot {
+            span {
+                border-color: var(--global--color-white);
+            }
+
+            &.active {
+                span {
+                    border-color: #113cac;
+                }
+            }
+        }
+    }
+}
+
+
+
+.carousel-navs {
+    position: relative;
+
+    .owl-nav {
+        span {
+            font-size: 0;
+        }
+
+        @media #{$minLarge} {
+            position: absolute;
+            top     : -117px;
+            right   : 0;
+        }
+
+        @media #{$maxTablet} {
+            display        : flex;
+            justify-content: center;
+            margin-bottom  : 30px;
+        }
+    }
+
+    .owl-next,
+    .owl-prev {
+        &:hover {
+            &::before {
+                color: var(--global--color-primary);
+            }
+        }
+
+        &:before {
+            font-family: "carousel" !important;
+            font-size  : 43px;
+            color      : #687596;
+            ;
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    .owl-prev {
+        margin-right: 50px;
+
+        &:before {
+            content: "\e990";
+        }
+    }
+
+    .owl-next {
+        &:before {
+            content: "\e991";
+        }
+    }
+}
+
+.carousel-navs {
+    .owl-dots {
+        position: absolute;
+        bottom  : 40px;
+        width   : 100%;
+    }
+}

@@ -1,0 +1,64 @@
+/*------------------------------------*\
+    #Client
+\*------------------------------------*/
+
+.clients {
+    padding-top   : 0px;
+    padding-bottom: 0;
+    overflow      : visible;
+
+    @media #{$maxTablet} {
+        padding-top: 0;
+    }
+
+    &.bg-grey {
+        color: #f9f9f9;
+    }
+
+    .client {
+        padding-top   : 60px;
+        padding-bottom: 60px;
+        cursor        : pointer;
+        transition    : 0.3s ease;
+        width         : 130px;
+        margin-right  : auto;
+        margin-left   : auto;
+        position      : relative;
+        opacity       : 1;
+        transition    : 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        @media #{$noteBook} {
+            width: 130px;
+        }
+
+        a {
+            position: absolute;
+            width   : 100%;
+            height  : 100%;
+            top     : 0;
+            left    : 0;
+            right   : 0;
+            z-index : 2;
+        }
+
+        img {
+            max-width   : 100%;
+            width       : auto;
+            display     : block;
+            margin-right: auto;
+            margin-left : auto;
+        }
+    }
+
+    &.clients-1 {
+        padding-top: 70px;
+
+        @media #{$maxTablet} {
+            padding-top: 0px;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'medsky';
+  src:  url('../fonts/medsky.eot?t3ruam');
+  src:  url('../fonts/medsky.eot?t3ruam#iefix') format('embedded-opentype'),
+    url('../fonts/medsky.ttf?t3ruam') format('truetype'),
+    url('../fonts/medsky.woff?t3ruam') format('woff'),
+    url('../fonts/medsky.svg?t3ruam#medsky') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'medsky' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\e900";
+}
+.icon-linkedin:before {
+  content: "\e901";
+}
+.icon-twitter:before {
+  content: "\e902";
+}
+.icon-youtube:before {
+  content: "\e903";
+}
+.icon-arrow:before {
+  content: "\e904";
+}
+.icon-quote:before {
+  content: "\e905";
+}

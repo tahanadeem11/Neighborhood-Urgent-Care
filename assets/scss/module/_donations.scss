@@ -1,0 +1,320 @@
+/*------------------------------------*\
+    #Donations
+\*------------------------------------*/
+.donations {
+    padding-top   : 42px;
+    padding-bottom: 110px;
+
+    @media #{$maxTablet} {
+        padding-bottom: 70px;
+    }
+
+    .donations-map {
+        position : relative;
+        max-width: 470px;
+        margin   : 0 auto;
+
+        @media #{$maxTablet} {
+            margin: 0 auto 40px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .map-pointer {
+            position: absolute;
+            width   : 28px;
+            height  : 28px;
+            cursor  : pointer;
+
+            &:hover {
+                .info {
+                    opacity   : 1;
+                    visibility: visible;
+                    transform : translateY(0);
+                }
+            }
+
+            &:first-of-type {
+                top : 29%;
+                left: 15%;
+            }
+
+            &:nth-of-type(2) {
+                top : 48%;
+                left: 48%;
+            }
+
+            &:nth-of-type(3) {
+                top : 23%;
+                left: 68%;
+            }
+
+            .info {
+                background-color: var(--global--color-white);
+                box-shadow      : 0px 5px 83px 0px rgba(9, 29, 62, 0.15);
+                border-radius   : 10px 10px 10px 0px;
+                position        : relative;
+                width           : max-content;
+                position        : absolute;
+                max-width       : 170px;
+                z-index         : 2;
+                transition      : 0.3s ease-in-out;
+                left            : 18px;
+                top             : -97px;
+                padding         : 15px 20px;
+                opacity         : 0;
+                visibility      : hidden;
+                transform       : translateY(10px);
+
+                &.left {
+                    left         : -160px;
+                    border-radius: 10px 10px 0 10px;
+
+                    &::before {
+                        clip-path: polygon(100% 0, 0 0, 100% 100%);
+                        left     : auto;
+                        right    : 0;
+                    }
+                }
+
+                &::before {
+                    content         : '';
+                    width           : 10px;
+                    height          : 10px;
+                    background-color: var(--global--color-white);
+                    clip-path       : polygon(100% 0, 0 0, 0 100%);
+                    position        : absolute;
+                    bottom          : -9px;
+                    left            : 0;
+                }
+
+                span {
+                    font-family   : var(--global--font-body);
+                    font-size     : 14px;
+                    line-height   : 24px;
+                    color         : var(--global--color-body);
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+
+    .img-hotspot {
+        .img-hotspot-wrap {
+            position : relative;
+            max-width: 470px;
+            margin   : 0 auto;
+
+            @media #{$maxTablet} {
+                margin: 0 auto 40px;
+            }
+
+            .img-hotspot-bg {
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .img-hotspot-pointers {
+                position: absolute;
+                width   : 100%;
+                height  : 100%;
+                top     : 0;
+                left    : 0;
+                right   : 0;
+
+                .img-hotspot-pointer {
+                    position: absolute;
+                    width   : 28px;
+                    height  : 28px;
+                    cursor  : pointer;
+
+                    &:hover {
+                        .pointer-icon {
+                            background-color: var(--global--color-secondary);
+                        }
+
+                        .info {
+                            opacity   : 1;
+                            visibility: visible;
+                            transform : translateY(0);
+                        }
+                    }
+
+                    .pointer-icon {
+                        @include centerd(28px, 28px, var(--global--color-secondary-darken));
+                        color        : var(--global--color-white);
+                        border-radius: 50%;
+                        transition   : 0.3s ease-in-out;
+                    }
+
+                    .info {
+                        background-color: var(--global--color-white);
+                        box-shadow      : 0px 5px 83px 0px rgba(9, 29, 62, 0.15);
+                        position        : relative;
+                        width           : max-content;
+                        position        : absolute;
+                        max-width       : 170px;
+                        z-index         : 2;
+                        transition      : 0.3s ease-in-out;
+                        padding         : 15px 20px;
+                        opacity         : 0;
+                        visibility      : hidden;
+                        transform       : translateY(10px);
+
+                        &::before {
+                            content         : '';
+                            bottom          : -9px;
+                            width           : 10px;
+                            height          : 10px;
+                            background-color: var(--global--color-white);
+                            position        : absolute;
+                        }
+
+                        &.left {
+
+                            &::before {
+                                clip-path: polygon(100% 0, 0 0, 100% 100%);
+                                left     : auto;
+                                right    : 20px;
+                            }
+                        }
+
+                        &.right {
+                            &::before {
+                                clip-path: polygon(100% 0, 0 0, 0 100%);
+                                left     : 20px;
+                            }
+                        }
+
+                        span {
+                            font-family   : var(--global--font-body);
+                            font-size     : 14px;
+                            line-height   : 24px;
+                            color         : #4F4B63;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .donations-action {
+        display    : flex;
+        align-items: center;
+
+        @media #{$maxTablet} {
+            justify-content: center;
+        }
+
+        @media #{$maxSmall} {
+            flex-direction: column;
+        }
+
+        .btn {
+            margin-right: 30px;
+            height      : 60px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @media #{$maxSmall} {
+                margin-right : 0;
+                margin-bottom: 20px;
+            }
+
+            &:first-child {
+                width: 200px;
+
+                i {
+                    width    : 60px;
+                    font-size: 15px;
+                }
+            }
+
+            &:last-child {
+                width: 180px;
+            }
+        }
+
+    }
+
+    .donations-img {
+        @media #{$minLarge} {
+            position : absolute;
+            left     : 0;
+            top      : 0;
+            max-width: 40%;
+            height   : 770px;
+            transform: translateY(-80px);
+        }
+
+        @media #{$maxTablet} {
+            margin-bottom: 50px;
+        }
+
+        img {
+            max-width : 100%;
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+        }
+    }
+
+    .accordion {
+        margin-bottom: 0;
+    }
+
+    &.donations-1 {
+        .donations-action {
+            margin-bottom: 100px;
+        }
+    }
+
+    &.donations-2 {
+        position   : relative;
+        padding-top: 116px;
+        ;
+        padding-bottom: 130px;
+        overflow      : visible;
+        z-index       : 5;
+
+        @media #{$maxTablet} {
+            padding-top: 70px;
+            ;
+            padding-bottom: 70px;
+        }
+    }
+
+    &.donations-3 {
+        padding-top: 234px;
+        ;
+
+        @media #{$maxTablet} {
+            padding-top: 70px;
+            ;
+        }
+
+        .donations-action {
+            margin-bottom: 100px;
+        }
+    }
+
+    &.donations-4 {
+        padding-top: 121px;
+        ;
+
+        @media #{$maxTablet} {
+            padding-top: 70px;
+            ;
+        }
+
+        .donations-action {
+            margin-bottom: 100px;
+        }
+    }
+}

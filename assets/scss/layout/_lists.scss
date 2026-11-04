@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    #Lists
+\*------------------------------------*/
+
+.advantages-list-wrapper {
+    @media #{$maxTablet} {
+        text-align: center;
+
+        .advantages-list {
+            @media #{$maxTablet} {
+                display: inline-grid;
+            }
+        }
+    }
+}
+
+.advantages-list {
+    text-align: left;
+    margin    : 0;
+    padding   : 0;
+    list-style: none;
+
+    li {
+        display       : flex;
+        align-items   : center;
+        font-family   : var(--global--font-body);
+        font-weight   : 700;
+        font-size     : 15px;
+        line-height   : 36px;
+        color         : #5A5470;
+        text-transform: capitalize;
+        position      : relative;
+
+        @media #{$noteBook} {
+            font-size: 14px;
+        }
+
+        i {
+            position: relative;
+            @include centerd(22px, 22px, var(--global--color-primary));
+            flex-shrink  : 0;
+            border-radius: 50%;
+            margin-right : 15px;
+            font-size    : 10px;
+            color        : var(--global--color-white);
+        }
+    }
+
+    &.advantages-list-white {
+        li {
+            color: #f9f9f9;
+
+            i {
+                color: var(--global--color-heading);
+            }
+        }
+    }
+}

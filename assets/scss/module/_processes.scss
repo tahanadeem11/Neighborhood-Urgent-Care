@@ -1,0 +1,156 @@
+/*------------------------------------*\
+    #Processes
+\*------------------------------------*/
+.processes {
+    .processes-holder {
+        border       : 2px solid #e6e8eb;
+        margin-bottom: 53px;
+    }
+
+    .process-panel {
+        padding     : 40px 45px 34px;
+        border-right: 2px solid #e6e8eb;
+        position    : relative;
+        transition  : 0.3s ease-in-out;
+
+        @media #{$noteBook} {
+            padding-left : 25px;
+            padding-right: 25px;
+        }
+
+        @media #{$maxSmall} {
+            padding-left : 25px;
+            padding-right: 25px;
+            border-right : 0;
+            border-bottom: 2px solid #e6e8eb;
+        }
+
+        &.last {
+            border-right: 0;
+
+            @media #{$maxSmall} {
+                border-bottom: 0;
+            }
+        }
+
+        &.last-md {
+            border-right: 0;
+        }
+
+        &:hover {
+            box-shadow: 0px 5px 83px 0px rgba(9, 29, 62, 0.15);
+
+            &::before {
+                width: calc(100% - 90px);
+
+                @media #{$noteBook} {
+                    width: calc(100% - 50px);
+                }
+
+                @media #{$maxSmall} {
+                    width: calc(100% - 50px);
+                }
+            }
+
+            .process-body {
+                .process-icon {
+                    i {
+                        color: var(--global--color-primary);
+                    }
+                }
+
+                .process-content {
+                    a {
+                        color: var(--global--color-primary);
+                    }
+                }
+            }
+        }
+
+        &::before {
+            content         : '';
+            position        : absolute;
+            bottom          : -1px;
+            left            : 50%;
+            transform       : translateX(-50%);
+            height          : 6px;
+            width           : 0;
+            transition      : 0.3s ease-in-out;
+            background-color: var(--global--color-primary);
+        }
+
+        .process-number {
+            font-family: var(--global--font-heading);
+            font-size  : 24px;
+            font-weight: 400;
+            line-height: 1;
+            font-style : italic;
+            color      : #e6e8eb;
+            position   : absolute;
+            right      : 40px;
+            top        : 30px;
+        }
+
+        .process-body {
+            @media #{$maxTablet} {
+                text-align: center;
+            }
+
+            .process-icon {
+                margin-bottom: 32px;
+
+                i {
+                    display   : flex;
+                    font-size : 43px;
+                    transition: 0.3s ease-in-out;
+                    color     : var(--global--color-secondary);
+
+                    @media #{$maxTablet} {
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .process-content {
+                h5 {
+                    font-family   : var(--global--font-heading);
+                    font-weight   : 500;
+                    font-size     : 18px;
+                    color         : var(--global--color-secondary-darken-alt);
+                    line-height   : 28px;
+                    margin-bottom : 16px;
+                    text-transform: capitalize;
+                }
+
+                p {
+                    font-family  : var(--global--font-body);
+                    font-weight  : 400;
+                    font-size    : 14px;
+                    line-height  : 24px;
+                    color        : #4F4B63;
+                    margin-bottom: 27px;
+                }
+
+                a {
+                    display       : flex;
+                    align-items   : center;
+                    font-family   : var(--global--font-secondary);
+                    font-weight   : 700;
+                    font-size     : 15px;
+                    text-transform: capitalize;
+                    color         : var(--global--color-secondary-darken);
+
+                    @media #{$maxTablet} {
+                        justify-content: center;
+                    }
+
+                    i {
+                        font-size   : 10px;
+                        margin-right: 10px;
+                        color       : var(--global--color-primary);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+/*------------------------------------*\
+    #NOTE
+\*------------------------------------*/
+.note {
+  text-align: center;
+  @media #{$maxTablet} {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p {
+    font-family: var(--global--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    color: #4F4B63;
+    line-height: 25px;
+    margin-bottom: 0;
+
+    a {
+      position: relative;
+      color: var(--global--color-secondary-darken);
+      transition: 0.3s ease-in-out;
+      text-transform: capitalize;
+      display: inline-flex;
+      align-items: center;
+      padding-bottom: 2px;
+      &:hover {
+        &::before {
+          width: 80%;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--global--color-primary);
+        transition: 0.3s ease-in-out;
+        height: 2px;
+        width: 100%;
+      }
+    }
+  }
+  &.note-light {
+    p {
+      color: #f4f4f4;
+
+      a {
+        color: var(--global--color-primary);
+
+        &::before {
+          background-color: var(--global--color-primary);
+        }
+      }
+    }
+  }
+  &.note-2 {
+    p {
+      a {
+        &:hover {
+          i {
+            margin-left: 5px;
+          }
+        }
+        &::before {
+          content: unset;
+        }
+        i {
+          margin-left: 10px;
+          color: var(--global--color-primary);
+          font-size: 10px;
+          transition: 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  &.note-3 {
+    a {
+      font-size: 15px;
+      color: var(--global--color-secondary-darken);
+      padding-bottom: 0;
+      i {
+        font-size: 11px;
+        color: var(--global--color-secondary);
+        margin-left: 10px;
+      }
+      &::before {
+        content: unset;
+      }
+    }
+  }
+}
