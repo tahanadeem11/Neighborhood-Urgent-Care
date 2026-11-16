@@ -155,9 +155,9 @@ body { color: #4f4b63; }
 .header-topbar-1 .top-bar { justify-content: center; }
 .header-topbar-1 .top-bar .block-right { margin-left: auto; margin-right: auto; }
 
-/* Urgent Care emphasis */
-.uc { color: #d0021b !important; font-weight: 700 !important; text-transform: uppercase !important; }
-.footer .uc, .hero .uc, .slide .uc, .nuc-cta .uc { color: #ff4d4d !important; }
+/* "Urgent Care": regular text in paragraphs; bold, taller and red in headings */
+.uc { color: inherit; font-weight: inherit; text-transform: none; }
+h1 .uc, h2 .uc, h3 .uc, h4 .uc, h5 .uc, .heading-title .uc, .nuc-eyebrow .uc { color: #d0021b; font-weight: 800; text-transform: uppercase; font-size: 1.2em; line-height: 1; }
 
 /* ================= Homepage redesign ================= */
 #slider-1 .slide{height:auto;min-height:min(86vh,700px);padding:110px 0 150px;display:flex;align-items:center}
@@ -223,3 +223,40 @@ body { color: #4f4b63; }
 .nuc-eyebrow{color:#d97706}
 @media(max-width:991.98px){.nuc-section{padding:72px 0}#slider-1 .slide{min-height:0;padding:90px 0 130px}.nuc-cta .actions{justify-content:flex-start;margin-top:20px}}
 @media(max-width:767.98px){.nuc-section{padding:60px 0}.hm-info{margin-top:-60px}.hm-stats{padding:44px 0}}
+
+/* ================= Client changes - stage 3 ================= */
+/* Brand lockup: bigger, taller. Neighborhood in black, Urgent Care in red */
+.header .brand-lockup .brand-icon { width: 72px; height: 72px; }
+.header .brand-lockup .brand-text { gap: 3px; }
+.header .brand-lockup .brand-text b { font-size: 31px; color: #111; letter-spacing: -.3px; }
+.header .brand-lockup .brand-text span { font-size: 19px; letter-spacing: 3.4px; }
+.footer .brand-lockup .brand-icon { width: 72px; height: 72px; }
+.footer .brand-lockup .brand-text b { font-size: 29px; }
+.footer .brand-lockup .brand-text span { font-size: 18px; letter-spacing: 3.2px; }
+@media (max-width: 575.98px) {
+  .header .brand-lockup .brand-icon { width: 52px; height: 52px; }
+  .header .brand-lockup .brand-text b { font-size: 20px; }
+  .header .brand-lockup .brand-text span { font-size: 12px; letter-spacing: 2.4px; }
+}
+
+/* Main menu: more space between Home / Services / Contact */
+@media (min-width: 992px) {
+  .header .navbar .navbar-nav { gap: 22px; }
+  .header .navbar .navbar-nav > li > a { padding-left: 14px; padding-right: 14px; }
+}
+
+/* Top bar: phone on the left, address + hours on the right */
+.header-topbar-1 .top-bar .block-right { margin: 0; width: 100%; }
+.header-topbar-1 .top-bar .top-contact { display: flex; align-items: center; width: 100%; }
+.header-topbar-1 .top-bar .top-contact .contact-info:nth-child(2) { margin-left: auto; }
+@media (max-width: 991.98px) { .header-topbar-1 .top-bar .top-contact .contact-info:nth-child(2) { margin-left: 0; } }
+
+/* Inner-page banner: replace the white bar + arrow box with a clean round scroll button */
+.hero.hero-5 .divider { height: 0; bottom: 0; }
+.hero.hero-5 .divider::before, .hero.hero-5 .divider .bg { display: none; }
+.hero.hero-5 .divider .scroll-btn { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); width: 46px; height: 46px; flex: none; border-radius: 50%; align-items: center; background: rgba(255, 255, 255, .16); border: 2px solid rgba(255, 255, 255, .85); transition: background .25s, transform .25s; }
+.hero.hero-5 .divider .scroll-btn:hover { background: var(--nuc-orange); border-color: var(--nuc-orange); transform: translateX(-50%) translateY(3px); }
+.hero.hero-5 .breadcrumb-holder { bottom: 40px; }
+
+/* Footer: three equal columns */
+.footer .footer-top .row > [class*="col-"] { padding-left: 24px; padding-right: 24px; }
