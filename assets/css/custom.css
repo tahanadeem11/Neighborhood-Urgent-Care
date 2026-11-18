@@ -589,3 +589,42 @@ h1 .uc, h2 .uc, h3 .uc, h4 .uc, h5 .uc, .heading-title .uc, .nuc-eyebrow .uc { c
 .single-service .widget-call .num { font-size: 24px; white-space: nowrap; margin: 10px 0 18px; }
 .single-service .widget-call .btn { border-radius: 50px; padding: 0 26px; height: 48px; display: inline-flex; align-items: center; font-weight: 800; }
 @media (min-width: 992px) { .single-service .sidebar-service { position: sticky; top: 110px; } }
+
+/* ===== Footer v3: static (no reveal/parallax), info strip + brand/services ===== */
+#footerParallax { position: static !important; z-index: auto; text-align: left; }
+#wrapperParallax { margin-bottom: 0 !important; z-index: auto; }
+
+.footer .footer-top { padding: 0 0 56px; }
+.nuc-cta + .footer .footer-top { padding-top: 170px; }
+.footer .footer-top .container > .row { display: flex; flex-wrap: wrap; align-items: stretch; }
+.footer .footer-top .container > .row > [class*="col-"] { display: block; padding: 0 15px !important; border-top: 0 !important; }
+
+/* Info strip */
+.footer-info { row-gap: 18px; margin-bottom: 52px; padding-bottom: 44px; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+.footer-info > [class*="col-"] { display: flex !important; }
+.fi-tile { display: flex; align-items: center; gap: 18px; width: 100%; padding: 22px 24px; border-radius: 18px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1); transition: background .25s, transform .25s; }
+.fi-tile:hover { background: rgba(255, 255, 255, .1); transform: translateY(-3px); }
+.fi-ico { flex: none; width: 54px; height: 54px; border-radius: 50%; background: var(--nuc-orange); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 8px 20px rgba(247, 148, 29, .35); }
+.fi-body { display: flex; flex-direction: column; min-width: 0; line-height: 1.4; }
+.fi-body small { font-size: 12px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #ffc46b; margin-bottom: 4px; }
+.fi-main { font-family: var(--global--font-heading); font-size: 18px; font-weight: 700; color: #fff; text-decoration: none; }
+a.fi-main:hover { color: #ffc46b; }
+.fi-sub { font-size: 14.5px; color: #d9cbe8; }
+.fi-sub a { color: #d9cbe8; }
+.fi-sub a:hover { color: #ffc46b; }
+
+/* Brand + services */
+.footer-main { row-gap: 40px; align-items: flex-start !important; }
+.footer .widget-about .brand-lockup { margin-bottom: 16px !important; }
+.footer .widget-about .widget-content > p { max-width: 380px; margin-bottom: 24px; }
+.footer .widget-about .directions { display: inline-flex; width: auto; padding: 13px 26px; margin: 0; }
+.footer .widget-links ul { columns: 2; column-gap: 40px; margin: 0; padding: 0; }
+.footer .widget-links ul li { break-inside: avoid; }
+.footer .widget-links .footer-widget-title h3 { margin-bottom: 18px; }
+
+@media (max-width: 991.98px) { .footer-info { margin-bottom: 40px; padding-bottom: 32px; } .nuc-cta + .footer .footer-top { padding-top: 230px; } }
+@media (max-width: 575.98px) { .footer .widget-links ul { columns: 1; } .fi-tile { padding: 18px 18px; } .fi-main { font-size: 17px; } }
+
+/* Developer credit link in orange */
+.footer .footer-bottom .copyright a, .footer .footer-bottom .copyright a:visited { color: var(--nuc-orange) !important; font-weight: 700; }
+.footer .footer-bottom .copyright a:hover { color: #ffc46b !important; text-decoration: underline; }
